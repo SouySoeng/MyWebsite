@@ -1,33 +1,54 @@
-{% extends "__l_newspaper.html" %}
-{% load static from staticfiles %}
+---
+layout: default
+---
 
-{% block head_page_css %}
-  {{ block.super }}
-  <link href="{% static 'css/calendar.css' %}" rel="stylesheet" media="screen">
-{% endblock head_page_css %}
+</div> <!-- end wrapper so I can make full length stripes -->
+<div class="home">
 
-{% block head_item_metadata %}
-  {% include "includes/lc_metadata.html" %}
-{% endblock head_item_metadata %}
+  <div class="stripe-one">
+    <div class="wrapper">
 
-{% block javascript %}
-{{ block.super }}
-<script type="text/javascript">
-  var jumpYearLoc = '{% url 'calendar_title_issues_calendar_for_year' title.lccn 9999 %}';
-  jQuery(function($){
-    $("#jump-year").click(function(){
-      var newloc = jumpYearLoc.replace("9999", $("#id_year").val());
-      window.location = newloc;
-    });
-  });
-</script>
-{% endblock %}
+      <img src="assets/template/open-oni-screenshot.png">
+      
+      <p>Open ONI is a community maintained project developed from chronam, the <a href="http://djangoproject.com" rel="nofollow">Django</a> application that the Library of Congress uses to make its <a href="http://chroniclingamerica.loc.gov" rel="nofollow">Chronicling America</a> website. The Chronicling America website makes millions of pages of historic American newspapers that have been digitized by the <a href="http://www.loc.gov/ndnp/" rel="nofollow">National Digital Newspaper Program (NDNP)</a> browsable and searchable on the Web.</p>
+    </div>
+  </div><!-- /stripe -->
 
-{% block extra_nav %}
-  {% include "year_select_form.html" %}
-{% endblock extra_nav %}
+  <div class="stripe-two">
+    <div class="wrapper">
 
-{% block newspaper_content %}
-  {% include "year_calendar.html" %}
-{% endblock newspaper_content %}
+      <h2>Get involved</h2>
 
+      <p>To participate in development, <strong><a href="http://bit.ly/openoni-slack-signup">join our Slack team</a></strong>.</p>
+
+      <p>Don't like Slack or had issues signing up? Email me (Karin Dalziel) at kdalziel[at]unl.edu and let me know how you'd like to communicate.</p>
+    </div>
+  </div><!-- /stripe -->
+  
+  <div class="stripe-three">
+    <div class="wrapper">
+
+      <h2>Latest Release</h2>
+      
+      <h3>The latest release is <a href="https://github.com/open-oni/open-oni/releases/tag/v0.10.0" alt="release page">v0.10.0</a></h3>
+
+      <p>If you are interested in using Open-ONI, try our latest release. Open-ONI is alpha software, and we are still working on documentation and code improvements. Please be patient, as we have a very small development team.</p>
+    </div>
+  </div><!-- /stripe -->
+
+  <div class="stripe-four">
+    <div class="wrapper">
+
+      <h2>Links</h2>
+
+      <ul style="list-style: none;">
+        <li><a href="https://github.com/open-oni">Open ONI Github organization</a></li>
+        <li><a href="https://github.com/open-oni/open-oni">Main Open ONI Repository</a></li>
+        <li><a href="https://github.com/open-oni/open-oni/wiki">Open ONI Documentation</a></li>
+      </ul>
+    </div>
+  </div><!-- /stripe -->
+
+</div><!-- /home -->
+
+<div class="wrapper"> <!-- reopening wrapper div -->
